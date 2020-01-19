@@ -1,0 +1,27 @@
+{
+  "name": "@sovpro/get-digit",
+  "version": "1.0.0",
+  "description": "Get a digit value from an integer number",
+  "main": "get-digit.js",
+  "scripts": {
+    "test": "istanbul cover test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sovpro/get-digit.git"
+  },
+  "keywords": [
+    "get",
+    "digit",
+    "number",
+    "value"
+  ],
+  "author": "sovpro <its.so@outlook.com>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "devDependencies": {
+    "istanbul": "^0.4.5"
+  }
+}
