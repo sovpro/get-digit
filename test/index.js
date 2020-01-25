@@ -57,3 +57,38 @@ assertWithInfo (
   , 'The result digit 2 in a non-number should be undefined'
 )
 
+assertWithInfo (
+    getDigit (1, 1)
+  , 1
+  , 'The result digit 1 in 1 should be 1'
+)
+
+assertWithInfo (
+    getDigit (2, 10)
+  , 1
+  , 'The result digit 2 in 10 should be 1'
+)
+
+assertWithInfo (
+    getDigit (1, 10)
+  , 0
+  , 'The result digit 1 in 10 should be 0'
+)
+
+assertWithInfo (
+    getDigit (1, 12)
+  , 2
+  , 'The result digit 1 in 12 should be 2'
+)
+
+assertWithInfo (
+    getDigit (0, 12)
+  , undefined
+  , 'The result digit 0 in 12 should be undefined'
+)
+
+assertWithInfo (
+    getDigit (10, 0)
+  , 0
+  , 'The result digit 10 in 0 should be 0'
+)
