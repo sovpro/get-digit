@@ -17,6 +17,10 @@ function assertWithInfo (actual, expected, message) {
   }
 }
 
+process.on ('uncaughtException', function (error) {
+  console.error (error)
+})
+
 process.once ('exit', function (code) {
   process.exit (Math.min (1, error_count))
 })
@@ -91,4 +95,34 @@ assertWithInfo (
     getDigit (10, 0)
   , 0
   , 'The result digit 10 in 0 should be 0'
+)
+
+assertWithInfo (
+    getDigit.base (16, 1, 0xff)
+  , 0xf
+  , 'The base 16 digit 1 in 0xff should be equal to 0xf'
+)
+
+assertWithInfo (
+    getDigit.base (16, 3, 0xff0000)
+  , 0x0
+  , 'The base 16 digit 3 in 0xff000 should be equal to 0x0'
+)
+
+assertWithInfo (
+    getDigit.base (2, 6, 0b10100111001)
+  , 1
+  , 'The base 2 digit 6 in 0b10100111001 should be equal to 0b1'
+)
+
+assertWithInfo (
+    getDigit.base (36, 1, 54)
+  , 18
+  , 'The base 36 digit 1 in 54 should be 18'
+)
+
+assertWithInfo (
+    getDigit.base (0, 4, 100)
+  , undefined
+  , 'The base 0 digit 4 in 100 should be undefined'
 )
