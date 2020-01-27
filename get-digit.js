@@ -19,7 +19,7 @@ function getDigit (base, digit, val) {
   while (digit-- > 0) {
     num /= base
     if (digit === 0) {
-      return (num - (num >> 0)) * base >> 0
+      return Math.trunc ((num - Math.trunc (num)) * base)
     }
   }
 }
