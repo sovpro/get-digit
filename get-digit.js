@@ -16,10 +16,5 @@ function getDigit (base, digit, val) {
   if (isNaN (num) || num === Infinity) return
   if (digit === 1) return num % base
   if (base === 2) return (num >> (digit - 1) & 1)
-  while (digit-- > 0) {
-    num /= base
-    if (digit === 0) {
-      return Math.trunc ((num - Math.trunc (num)) * base)
-    }
-  }
+  return Math.trunc (num / Math.pow (base, digit - 1)) % base
 }
